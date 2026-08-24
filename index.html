@@ -408,6 +408,33 @@
     color:var(--cream);font-size:12.5px;font-weight:700;
     padding:7px 14px;border-radius:999px;
   }
+  /* ---------- INSTAGRAM PREVIEW (exemplo, não é feed ao vivo ainda) ---------- */
+  .ig-preview{background:var(--brown);color:var(--cream);}
+  .ig-preview .label{color:var(--gold-light);}
+  .ig-preview .label::before{background:var(--gold-light);}
+  .ig-preview h2.section-title{color:var(--cream);}
+  .ig-example-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(232,162,59,0.15);border:1px solid rgba(232,162,59,0.4);
+    color:var(--gold-light);font-family:'Manrope',sans-serif;font-size:12.5px;font-weight:700;
+    padding:8px 16px;border-radius:999px;margin-top:18px;
+  }
+  .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px;}
+  @media(max-width:860px){.ig-grid{grid-template-columns:repeat(2,1fr);}}
+  .ig-tile{
+    position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;
+    border:1px solid rgba(232,162,59,0.2);
+  }
+  .ig-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+  .ig-tile:hover img{transform:scale(1.07);}
+  .ig-tile-overlay{
+    position:absolute;inset:0;background:rgba(21,10,4,0.45);
+    opacity:0;transition:opacity .3s;
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;color:var(--cream);
+  }
+  .ig-tile:hover .ig-tile-overlay{opacity:1;}
+  .ig-cta{margin-top:32px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
 </style>
 </head>
 <body>
@@ -601,6 +628,25 @@
         <p>Mais de 7.300 pessoas acompanham e comentam nos posts da Kibaca toda semana — a prova real está no próprio Instagram.</p>
         <div class="test-author"><div class="test-avatar"></div><div><b>@kibacasalgaderia</b><span>Comunidade no Instagram</span></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section ig-preview">
+  <div class="wrap">
+    <div class="label">Direto do Instagram</div>
+    <h2 class="section-title">Acompanhe a Kibaca todos os dias</h2>
+    <p style="max-width:520px;color:rgba(251,242,227,0.65);margin-top:14px;">Assim ficaria uma vitrine automática puxando os posts mais recentes de @kibacasalgaderia direto no site.</p>
+    <div class="ig-example-badge">💡 Exemplo de layout — feed ao vivo pode ser ativado depois</div>
+    <div class="ig-grid">
+      <div class="ig-tile"><img src="img/mix_salgados.jpg" alt="Post Instagram Kibaca"><div class="ig-tile-overlay">📸</div></div>
+      <div class="ig-tile"><img src="img/copo_turbinado.jpg" alt="Post Instagram Kibaca"><div class="ig-tile-overlay">📸</div></div>
+      <div class="ig-tile"><img src="img/bolinho_bacalhau.jpg" alt="Post Instagram Kibaca"><div class="ig-tile-overlay">📸</div></div>
+      <div class="ig-tile"><img src="img/croquete_coca.jpg" alt="Post Instagram Kibaca"><div class="ig-tile-overlay">📸</div></div>
+    </div>
+    <div class="ig-cta">
+      <a href="https://instagram.com/kibacasalgaderia" target="_blank" rel="noopener" class="btn btn-primary">📸 Seguir @kibacasalgaderia</a>
+      <span style="font-size:13px;color:rgba(251,242,227,0.55);">7.300+ seguidores acompanhando</span>
     </div>
   </div>
 </section>
